@@ -17,7 +17,7 @@ public class AddTaskActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY = "com.magdamiu.archcomponents.REPLY";
     public static final String EXTRA_REPLY_ID = "com.magdamiu.archcomponents.REPLY_ID";
 
-    private EditText mEditWordView;
+    private EditText mEditItemView;
     private Bundle mExtras;
 
     @Override
@@ -25,7 +25,7 @@ public class AddTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
-        mEditWordView = findViewById(R.id.edit_word);
+        mEditItemView = findViewById(R.id.edit_word);
         int id = -1;
 
         mExtras = getIntent().getExtras();
@@ -33,19 +33,19 @@ public class AddTaskActivity extends AppCompatActivity {
         if (mExtras != null) {
             String word = mExtras.getString(EXTRA_DATA_UPDATE_ITEM, "");
             if (!word.isEmpty()) {
-                mEditWordView.setText(word);
-                mEditWordView.setSelection(word.length());
-                mEditWordView.requestFocus();
+                mEditItemView.setText(word);
+                mEditItemView.setSelection(word.length());
+                mEditItemView.requestFocus();
             }
         }
     }
 
     public void saveItemOnClick(View view) {
         Intent replyIntent = new Intent();
-        if (TextUtils.isEmpty(mEditWordView.getText())) {
+        if (TextUtils.isEmpty(mEditItemView.getText())) {
             setResult(RESULT_CANCELED, replyIntent);
         } else {
-            String word = mEditWordView.getText().toString();
+            String word = mEditItemView.getText().toString();
             replyIntent.putExtra(EXTRA_REPLY, word);
             if (mExtras != null && mExtras.containsKey(EXTRA_DATA_ID)) {
                 int id = mExtras.getInt(EXTRA_DATA_ID, -1);

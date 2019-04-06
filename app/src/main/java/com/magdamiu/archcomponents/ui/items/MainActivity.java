@@ -82,11 +82,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                         int position = viewHolder.getAdapterPosition();
                         Item myItem = adapter.getItemAtPosition(position);
+                        mItemViewModel.deleteItem(myItem);
                         Toast.makeText(MainActivity.this,
                                 getString(R.string.delete_item) + " " +
                                         myItem.getName(), Toast.LENGTH_LONG).show();
-
-                        mItemViewModel.deleteItem(myItem);
                     }
                 });
         helper.attachToRecyclerView(mRecyclerViewItems);
