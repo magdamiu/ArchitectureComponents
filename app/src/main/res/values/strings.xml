@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Architecture Components</string>
+    <string name="hint_word">Add a new task</string>
+    <string name="button_save">Save</string>
+    <string name="no_item">No tasks :)</string>
+    <string name="delete_item">The next task have been deleted:</string>
+    <string name="clear_all_data">Clear all tasks</string>
+    <string name="clear_data_toast_text">Clear all the tasks...</string>
+    <string name="unable_to_update">Unable to update...</string>
+    <string name="empty_not_saved">Empty. Not saved...</string>
+</resources>
